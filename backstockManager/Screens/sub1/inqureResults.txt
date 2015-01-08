@@ -1,0 +1,7 @@
+--Inquire Results--
+
+display results in scroll
+
+-Buttons-
+$Home
+$Back

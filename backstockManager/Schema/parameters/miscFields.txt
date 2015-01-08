@@ -1,0 +1,3 @@
+-miscFields
+string-group         //tote-size,tote-color,season,location (cat/subcat)
+string-value         //value of param

@@ -1,0 +1,12 @@
+-Settings-
+--Checkbox--
+$Require Sex
+$Require Season
+$Require Hung
+$Require Sensored
+$Require Offsite
+$Require Offsite Location
+$tote-size  -string [add]
+$tote-color -string [add]
+$season     -string [add]
+$location   -string [add]

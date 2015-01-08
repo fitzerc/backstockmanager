@@ -1,0 +1,22 @@
+-Find Tote Search-
+-Buttons
+$Fill Tote             -Success           -Update Values                -pass
+$Edit Contents Info    -new screen        -open screen to update values -pass
+$Empty Tote            -Confirm -Success  -Wipe out Values
+$Cancel                                   -Back one screen
+$Home                                     -Home
+=Fields=
+++++++++
+--Tote Color  -Not Active Field
+--Tote Number -Not Active Field
+--Tote Size   -Not Active Field
+--Date        -Required   -fill-in
+--Sex         -Check req  -chkbox
+--Category    -Required   -fill-in
+--Subcategory -Check req  -fill-in
+--Season      -Check req  -dropdown
+--Hung?       -Check req  -chkbox
+--Sensored?   -check req  -chkbox
+--Offsite?    -check req  -chkbox
+--Offsite loc -check req  -dropdown/fill-in
++++++++

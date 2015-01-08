@@ -1,0 +1,14 @@
+-findTote-
+=Buttons=
+++++++++
+&Search& -new screen
+&Cancel& -back one screen
+&Reset&  -clear fields
+&Home&   -home
++++++++
+=Fields=
+++++++++
+--Tote Color  -Required  -dropdown
+--Tote Label  -Required  -fill-in
+--Tote Size   -Required  -dropdown
++++++++

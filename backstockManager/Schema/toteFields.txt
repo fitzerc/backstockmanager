@@ -1,0 +1,13 @@
+-tote-
+string-toteColor
+string-toteNumber
+string-toteSize
+string-date
+string-sex
+string-cat
+string-subcat
+string-season
+int-hung
+int-sensor
+int-off
+string-offLoc

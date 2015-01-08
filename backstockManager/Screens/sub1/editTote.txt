@@ -1,0 +1,9 @@
+-edit tote-
+--Fields--
+$Tote Color
+$Tote Label
+$Tote Size
+--Buttons--
+$Save     -success
+$Cancel
+$Home

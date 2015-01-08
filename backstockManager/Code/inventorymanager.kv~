@@ -1,0 +1,557 @@
+#:kivy 1.8.0
+#: import main main
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ScreenManager kivy.uix.screenmanager.ScreenManager
+#: import Screen kivy.uix.screenmanager.Screen
+#: import CheckBox kivy.uix.checkbox.CheckBox
+
+
+<InventoryRoot>
+	orientation: 'vertical'
+	PasswordScreen:
+	HomeScreen:
+	FindTote:
+	Inquire:
+	ToteManagement:
+	SettingsScreen:
+	SearchResults:
+	InquireResults:
+	PasswordMaintenance:
+	EditPassword:
+
+#---------------------------Password Screen----------------------------------
+<PasswordScreen>
+	on_enter: self.reset()
+	name: 'password'
+	BoxLayout:
+		orientation: 'vertical'
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Name'
+			TextInput:
+				id: login
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Password'
+			TextInput:
+				id: password
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				name: 'login'
+				text: 'Login'
+				on_release: app.root.current = root.password(login.text,password.text)
+			Button:
+				name: 'exit'
+				text: 'Exit'
+				on_release: exit()
+#---------------------------Home Screen--------------------------------------
+<HomeScreen>
+	name: 'home'
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: 'Backstock Manager'
+			font_size: 30
+		BoxLayout:
+			orientation: 'horizontal'
+			BoxLayout:
+				orientation: 'vertical'
+				Button:
+					text: 'Find Tote'
+					on_release: app.root.current = 'findTote'
+				Button:
+					text: 'Inquire'
+					on_release: app.root.current = 'inquire'
+				Button:
+					text: 'Tote Management'
+					on_release: app.root.current = 'toteManagement'
+			BoxLayout:
+				orientation: 'vertical'
+				Button:
+					text: 'Settings'
+					on_press: app.root.current = 'settings'
+				Button:
+					text: 'Password Maintenance'
+					on_release: app.root.current = 'passMaint'
+				Button:
+					text: 'Exit'
+					on_release: exit()
+#-----------------------------------Password Maintenance----------------------
+<PasswordMaintenance>
+	name: 'passMaint'
+	BoxLayout:
+		orientation: 'vertical'
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Password Maintenance'
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Name'
+			TextInput:
+				hint_text: 'Enter Name'
+				id: name
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Password'
+			TextInput:
+				hint_text: 'Enter Password'
+				id: password
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				text: 'Add User'
+				on_release: root.add(name.text,password.text)
+			Button:
+				text: 'Edit User'
+				on_release: app.root.current = 'editPass'
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				text: 'Home'
+				on_release: app.root.current = 'home'
+			Button:
+				text: 'Delete User'
+			Button:
+				text: 'Exit'
+				on_release: exit()
+#-----------------------------------Edit Password Screen----------------------
+<EditPassword>
+	name: 'editPass'
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: 'Edit User'
+		BoxLayout:
+			orientation: 'vertical'
+			BoxLayout:
+				orientation: 'horizontal'
+				Label:
+					text: 'Name'
+				TextInput:
+					id: name
+					hint_text: 'Enter New Name'
+			BoxLayout:
+				orientation: 'horizontal'
+				Label:
+					text: 'Password'
+				TextInput:
+					id: name
+					hint_text: 'Enter New Password'
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				id: security
+				text: 'Security'
+				on_release: exit()
+#-----------------------------------Find Tote Screen--------------------------
+<FindTote>
+	on_enter: self.reset()
+	name: 'findTote'
+	BoxLayout:
+		id: findToteBox 
+		orientation: 'vertical'
+		Label:
+			text: 'FIND TOTE SCREEN'
+			font_size: 30
+		Button:
+			id: toteColor
+			text: 'Select Color'
+			on_press: root.fillToteColor()
+		TextInput:
+			id: toteLabel
+			hint_text: 'Select Tote Label'
+			multiline: False
+		Button:
+			id: toteSize
+			text: 'Select Tote Size'
+			on_press: root.fillToteSize()
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				text: 'Search'
+				on_release: root.search(toteColor.text,toteLabel.text,toteSize.text)
+				on_release: app.root.current = 'searchResults'
+			Button:
+				text: 'Reset'
+				on_release: root.reset()
+			Button:
+				text: 'Home'
+				on_release: app.root.current = 'home'
+			Button:
+				text: 'Exit'
+				on_release: exit()
+#--------------------------------Inquire Screen-------------------------------
+<Inquire>
+	on_enter: self.reset()
+	name: 'inquire'
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: 'INQUIRE SCREEN'
+			font_size: 30
+		BoxLayout:
+			orientation: 'vertical'
+			BoxLayout:
+				Label:
+					text:'Men'
+				CheckBox:
+					id: men
+				Label:
+					text:'Women'
+				CheckBox:
+					id: women
+				Label:
+					text:'Offsite'
+				CheckBox:
+					id: offsite
+				Label:
+					text:'Hung'
+				CheckBox:
+					id: hung
+				Label:
+					text:'F/W'
+				CheckBox:
+					id: fw
+				Label:
+					text:'S/S'
+				CheckBox:
+					id: ss
+			Button:
+				id: categoryDrop
+				text: 'Category'
+				on_release: root.fillCategory()
+			Button:
+				id: subcatDrop
+				text: 'Subcategory'
+				on_release: root.fillSubcategory()
+			TextInput:
+				id: dateFrom
+				hint_text: 'From mm/dd/yyyy'
+				multiline: False
+			TextInput:
+				id: dateTo
+				hint_text: 'To mm/dd/yyyy'
+				multiline: False
+		BoxLayout:
+			Button:
+				text: 'Search'
+				on_release: app.root.current = 'inquireResults'
+			Button:
+				text: 'Reset'
+				on_release: root.reset()
+			Button:
+				text: 'Home'
+				on_release: app.root.current = 'home'
+			Button:
+				text: 'Exit'
+				on_release: exit()
+#--------------------------Tote Management Screen----------------------------
+<ToteManagement>
+	name: 'toteManagement'
+	id: toteManagement
+	on_enter: self.reset()
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: 'TOTE MANAGEMENT SCREEN'
+			font_size: 30
+		BoxLayout:
+			orientation: 'vertical'
+			Button:
+				id: toteColor
+				text: 'Select Color'
+				on_press: root.fillToteColor()
+			TextInput:
+				id: toteLabel
+				hint_text: 'Tote Label'
+				multiline: False
+			Button:
+				id: toteSize
+				text: 'Select Tote Size'
+				on_press: root.fillToteSize()
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				text: 'Add Tote'
+				on_release: toteManagement.addTote(toteColor.text,toteLabel.text,toteSize.text)
+			Button:
+				text: 'Delete Tote'
+				on_release: root.deleteTote(toteColor.text,toteLabel.text,toteSize.text)
+			
+		BoxLayout:
+			Button:
+				text: 'Home'
+				on_release: app.root.current = 'home'
+			Button:
+				text: 'Reset'
+				on_release: root.reset()
+			Button:
+				text: 'Exit'
+				on_release: exit()
+#----------------------------Settings Screen----------------------------------
+<SettingsScreen>
+	name: 'settings'
+	on_enter: self.reset()
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: 'SETTINGS SCREEN'
+			font_size: 30
+		BoxLayout:
+			orientation: 'horizontal'
+			BoxLayout:
+				orientation: 'vertical'
+				BoxLayout:
+					orientation: 'horizontal'
+					Label:
+						text: 'Require Sex'
+					CheckBox:
+						id: requireSex
+				BoxLayout:
+					orientation: 'horizontal'
+					Label:
+						text: 'Require Season'
+					CheckBox:
+						id: requireSeason
+				BoxLayout:
+					orientation: 'horizontal'
+					Label:
+						text: 'Require Hung'
+					CheckBox:
+						id: requireHung
+			BoxLayout:
+				orientation: 'vertical'
+				BoxLayout:
+					orientation: 'horizontal'
+					Label:
+						text: 'Require Sensored'
+					CheckBox:
+						id: requireSensor
+				BoxLayout:
+					orientation: 'horizontal'
+					Label:
+						text: 'Require Offsite'
+					CheckBox:
+						id: requireOffsite
+				BoxLayout:
+					orientation: 'horizontal'
+					Label:
+						text: 'Require Offsite Location'
+					CheckBox:
+						id: requireOffLoc
+		BoxLayout:
+			orientation: 'vertical'
+			BoxLayout:
+				orientation: 'horizontal'
+				TextInput:
+					id: newSize
+					hint_text: 'New Tote Size'
+					multiline: False
+				BoxLayout:
+					orientation: 'horizontal'
+					Button:
+						text: 'Add'
+						on_press: root.add('toteSize',newSize.text)
+						on_release: root.reset()
+					Button:
+						text: 'Delete'
+						on_press: root.delete('toteSize',newSize.text)
+						on_release: root.reset()
+				TextInput:
+					id: newColor
+					hint_text: 'New Tote Color'
+					multiline: False
+				BoxLayout:
+					orientation: 'horizontal'
+					Button:
+						text: 'Add'
+						on_press: root.add('toteColor',newColor.text)
+						on_release: root.reset()
+					Button:
+						text: 'Delete'
+						on_press: root.delete('toteColor',newColor.text)
+						on_release: root.reset()
+			BoxLayout:
+				orientation: 'horizontal'
+				TextInput:
+					id: newSeason
+					hint_text: 'New Season'
+					multiline: False
+				BoxLayout:
+					orientation: 'horizontal'
+					Button:
+						text: 'Add'
+						on_press: root.add('season',newSeason.text)
+						on_release: root.reset()
+					Button:
+						text: 'Delete'
+				TextInput:
+					id: newLocation
+					hint_text: 'New Location'
+					multiline: False
+				BoxLayout:
+					orientation: 'horizontal'
+					Button:
+						text: 'Add'
+						on_press: root.add('location',newLocation.text)
+						on_release: root.reset()
+					Button:
+						text: 'Delete'
+			BoxLayout:
+				orientation: 'horizontal'
+				TextInput:
+					id: newSex
+					hint_text: 'New Sex'
+					multiline: False
+				BoxLayout:
+					orientation: 'horizontal'
+					Button:
+						text: 'Add'
+						on_press: root.add('sex',newSex.text)
+						on_release: root.reset()
+					Button:
+						text: 'Delete'
+				TextInput:
+					id: newCat
+					hint_text: 'New Category'
+					multiline: False
+				BoxLayout:
+					orientation: 'horizontal'
+					Button:
+						text: 'Add'
+						on_press: root.add('category',newCat.text)
+						on_release: root.reset()
+					Button:
+						text: 'Delete'
+			
+			BoxLayout:
+				orientation: 'horizontal'
+				TextInput:
+					id: newSubCat
+					hint_text: 'New Subcategory'
+					multiline: False
+				BoxLayout:
+					orientation: 'horizontal'
+					Button:
+						text: 'Add'
+						on_press: root.add('SubCat',newSubCat.text)
+						on_release: root.reset()
+					Button:
+						text: 'Delete'
+		BoxLayout:
+			Button:
+				text: 'Home'
+				on_release: app.root.current = 'home'
+			Button:
+				text: 'Save'
+				on_release: root.saveSettings(requireSex.active,requireSeason.active,requireHung.active,requireSensor.active,requireOffsite.active,requireOffLoc.active)
+			Button:
+				text: 'Exit'
+				on_release: exit()
+#-------Search Results Screen from Find Tote----------------------------------
+<SearchResults>
+	on_enter: self.updateLabel()
+	name: 'searchResults'
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			id: totecolor
+			text: ''
+		Label:
+			id: totelabel
+			text: ''
+		Label:
+			id: totesize
+			text: ''
+		TextInput:
+			id: date
+			text: ''
+			multiline: False
+			hint_text: "Enter Date Filled"
+		Button:
+			id: sex
+			text: "No Sex Selected"
+			multiline: False
+			on_release: root.fillSex()
+		Button:
+			id: cat
+			text: "No Category Selected"
+			multiline: False
+			on_release: root.fillCategory()
+		Button:
+			id: subcat
+			text: "No Subcategory Selected"
+			multiline: False
+			on_release: root.fillSubcategory()
+		Button:
+			id: season
+			text: "No Season Selected"
+			multiline: False
+			on_release: root.fillSeason()
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: "Is It Hung"
+			CheckBox:
+				id: hung
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: "Is It Sensored"
+			CheckBox:
+				id: sensor
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: "Is It Offsite"
+			CheckBox:
+				id: off
+		Button:
+			id: offLoc
+			text: ""
+			multiline: False
+			on_release: root.fillLocation()
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				text: 'Save Tote'
+				on_release: root.saveTote(date.text,sex.text,cat.text,subcat.text,season.text,hung.active,sensor.active,off.active,offLoc.text,totecolor.text,totelabel.text,totesize.text)
+				on_release: app.root.current = 'searchResults'
+			Button:
+				text: 'Empty Tote'
+				on_release: root.emptyTote()
+				on_release: app.root.current = 'searchResults'
+		BoxLayout:
+			Button:
+				text: 'Home'
+				on_release: app.root.current = 'home'
+			Button:
+				text: 'Exit'
+				on_release: exit()
+#---------Search Results Screen from Inquire---------------------------------
+<InquireResults>
+	orientation: 'vertical'
+	name: 'inquireResults'
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: 'Place Holder'
+		Label:
+			text: 'Place Holder'
+		Label:
+			text: 'Place Holder'
+		BoxLayout:
+			orientation: 'vertical'
+			BoxLayout:
+				Button:
+					text: 'Home'
+					on_release: app.root.current = 'home'
+				Button:
+					text: 'Exit'
+					on_release: exit()

@@ -1,0 +1,12 @@
+-Tote Management-
+============
+-Buttons
+$Add Tote    -success                      -add to db
+$Delete Tote -confirm -validate -success   -remove from db
+$Edit Tote   -new screen                       
+============
+-Fields- all required
+============
+--Tote Color
+--Tote Label
+--Tote Size

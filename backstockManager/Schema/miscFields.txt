@@ -1,0 +1,6 @@
+miscFields:
+
+VALUES:
+'toteSize'     : holds tote sizes
+'toteColor'    : holds tote color
+'location'     : holds offsite location

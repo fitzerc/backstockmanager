@@ -1,0 +1,9 @@
+Home Screen
+-Buttons
+--Find Tote
+--Inquire
+--Tote Management  -pass
+--Settings         -pass
+--Exit
+
+-Dialog

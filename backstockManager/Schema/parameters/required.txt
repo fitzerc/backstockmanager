@@ -1,0 +1,9 @@
+-Parameters-
+-req
+int-sex
+int-subcat
+int-season
+int-hung
+int-sensor
+int-off
+int-offLoc

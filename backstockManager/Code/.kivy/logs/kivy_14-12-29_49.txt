@@ -1,0 +1,50 @@
+[INFO              ] Logger: Record log in C:.kivy\logs\kivy_14-12-29_49.txt
+[INFO              ] Kivy v1.8.0
+[INFO              ] Factory: 157 symbols loaded
+[DEBUG             ] Cache: register <kv.lang> with limit=None, timeout=Nones
+[DEBUG             ] Cache: register <kv.image> with limit=None, timeout=60s
+[DEBUG             ] Cache: register <kv.atlas> with limit=None, timeout=Nones
+[INFO              ] Image: Providers: img_tex, img_dds, img_pygame, img_gif (img_pil ignored)
+[DEBUG             ] Cache: register <kv.texture> with limit=1000, timeout=60s
+[DEBUG             ] Cache: register <kv.shader> with limit=1000, timeout=3600s
+[INFO              ] Text: Provider: pygame
+[DEBUG             ] Window: Ignored <egl_rpi> (import error)
+[INFO              ] Window: Provider: pygame(['window_egl_rpi'] ignored)
+[DEBUG             ] Window: Display driver windib
+[DEBUG             ] Window: Actual window size: %dx%d
+[DEBUG             ] Window: Actual color bits r%d g%d b%d a%d
+[DEBUG             ] Window: Actual depth bits: %d
+[DEBUG             ] Window: Actual stencil bits: %d
+[DEBUG             ] Window: Actual multisampling samples: %d
+[INFO              ] GL: OpenGL version <4.0.0 - Build 10.18.10.3308>
+[INFO              ] GL: OpenGL vendor <Intel>
+[INFO              ] GL: OpenGL renderer <Intel(R) HD Graphics 4000>
+[INFO              ] GL: OpenGL parsed version: 4, 0
+[INFO              ] GL: Shading version <4.00 - Build 10.18.10.3308>
+[INFO              ] GL: Texture max size <16384>
+[INFO              ] GL: Texture max units <16>
+[DEBUG             ] Shader: Fragment compiled successfully
+[DEBUG             ] Shader: Vertex compiled successfully
+[DEBUG             ] ImagePygame: Load <C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\data\glsl\default.png>
+[INFO              ] Window: virtual keyboard not allowed, single mode, not docked
+[DEBUG             ] App: Loading kv <.\inventorymanager.kv>
+[WARNING           ] stderr: Traceback (most recent call last):
+[WARNING           ] stderr:   File "main.py", line 574, in <module>
+[WARNING           ] stderr:     InventoryManager().run()
+[WARNING           ] stderr:   File "C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\app.py", line 765, in run
+[WARNING           ] stderr:     self.load_kv(filename=self.kv_file)
+[WARNING           ] stderr:   File "C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\app.py", line 585, in load_kv
+[WARNING           ] stderr:     root = Builder.load_file(rfilename)
+[WARNING           ] stderr:   File "C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\lang.py", line 1444, in load_file
+[WARNING           ] stderr:     return self.load_string(data, **kwargs)
+[WARNING           ] stderr:   File "C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\lang.py", line 1491, in load_string
+[WARNING           ] stderr:     parser = Parser(content=string, filename=fn)
+[WARNING           ] stderr:   File "C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\lang.py", line 1049, in __init__
+[WARNING           ] stderr:     self.parse(content)
+[WARNING           ] stderr:   File "C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\lang.py", line 1122, in parse
+[WARNING           ] stderr:     objects, remaining_lines = self.parse_level(0, lines)
+[WARNING           ] stderr:   File "C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\lang.py", line 1218, in parse_level
+[WARNING           ] stderr:     level + 1, lines[i:], spaces)
+[WARNING           ] stderr:   File "C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\lang.py", line 1271, in parse_level
+[WARNING           ] stderr:     if current_property[:3] == 'on_':
+[WARNING           ] stderr: TypeError: 'NoneType' object has no attribute '__getitem__'

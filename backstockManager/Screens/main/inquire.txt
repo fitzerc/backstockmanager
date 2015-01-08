@@ -1,0 +1,19 @@
+-Inquire-
+============
+--Checkbox----
+$All M
+$All F
+$All offsite
+$All hung
+$f/w
+$s/s
+--Dropdown--
+$Category
+$Subcategory
+--Field--
+$FromDate
+$ToDate
+--Buttons--
+$Search -new screen
+$Reset
+$Cancel
