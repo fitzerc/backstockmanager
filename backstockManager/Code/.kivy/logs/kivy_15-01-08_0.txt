@@ -1,0 +1,45 @@
+[INFO              ] Logger: Record log in C:.kivy\logs\kivy_15-01-08_0.txt
+[INFO              ] Kivy v1.8.0
+[INFO              ] Factory: 157 symbols loaded
+[DEBUG             ] Cache: register <kv.lang> with limit=None, timeout=Nones
+[DEBUG             ] Cache: register <kv.image> with limit=None, timeout=60s
+[DEBUG             ] Cache: register <kv.atlas> with limit=None, timeout=Nones
+[INFO              ] Image: Providers: img_tex, img_dds, img_pygame, img_gif (img_pil ignored)
+[DEBUG             ] Cache: register <kv.texture> with limit=1000, timeout=60s
+[DEBUG             ] Cache: register <kv.shader> with limit=1000, timeout=3600s
+[INFO              ] Text: Provider: pygame
+[DEBUG             ] Window: Ignored <egl_rpi> (import error)
+[INFO              ] Window: Provider: pygame(['window_egl_rpi'] ignored)
+[DEBUG             ] Window: Display driver windib
+[DEBUG             ] Window: Actual window size: %dx%d
+[DEBUG             ] Window: Actual color bits r%d g%d b%d a%d
+[DEBUG             ] Window: Actual depth bits: %d
+[DEBUG             ] Window: Actual stencil bits: %d
+[DEBUG             ] Window: Actual multisampling samples: %d
+[INFO              ] GL: OpenGL version <4.0.0 - Build 10.18.10.3308>
+[INFO              ] GL: OpenGL vendor <Intel>
+[INFO              ] GL: OpenGL renderer <Intel(R) HD Graphics 4000>
+[INFO              ] GL: OpenGL parsed version: 4, 0
+[INFO              ] GL: Shading version <4.00 - Build 10.18.10.3308>
+[INFO              ] GL: Texture max size <16384>
+[INFO              ] GL: Texture max units <16>
+[DEBUG             ] Shader: Fragment compiled successfully
+[DEBUG             ] Shader: Vertex compiled successfully
+[DEBUG             ] ImagePygame: Load <C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\data\glsl\default.png>
+[INFO              ] Window: virtual keyboard not allowed, single mode, not docked
+[DEBUG             ] App: Loading kv <.\inventorymanager.kv>
+[DEBUG             ] Cache: register <kv.loader> with limit=500, timeout=60s
+[INFO              ] Loader: using a thread pool of 2 workers
+[DEBUG             ] Cache: register <textinput.label> with limit=None, timeout=60.0s
+[DEBUG             ] Cache: register <textinput.width> with limit=None, timeout=60.0s
+[DEBUG             ] Atlas: Load <C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\data\..\data\images\defaulttheme.atlas>
+[DEBUG             ] Atlas: Need to load 1 images
+[DEBUG             ] Atlas: Load <C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\data\..\data\images\defaulttheme-0.png>
+[DEBUG             ] ImagePygame: Load <C:\Users\Chris\Desktop\Kivy-1.8.0-py2.7-win32\kivy\kivy\data\..\data\images\defaulttheme-0.png>
+[INFO              ] GL: NPOT texture support is available
+[INFO              ] OSC: using <thread> for socket
+[DEBUG             ] Base: Create provider from mouse
+[DEBUG             ] Base: Create provider from wm_touch
+[DEBUG             ] Base: Create provider from wm_pen
+[INFO              ] Base: Start application main loop
+[INFO              ] Base: Leaving application in progress...

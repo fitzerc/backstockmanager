@@ -18,6 +18,7 @@
 	InquireResults:
 	PasswordMaintenance:
 	EditPassword:
+	ChangeSecurity:
 
 #---------------------------Password Screen----------------------------------
 <PasswordScreen>
@@ -117,6 +118,7 @@
 				on_release: app.root.current = 'home'
 			Button:
 				text: 'Delete User'
+				on_release: root.delete(name.text,password.text)
 			Button:
 				text: 'Exit'
 				on_release: exit()
@@ -135,20 +137,38 @@
 					text: 'Name'
 				TextInput:
 					id: name
-					hint_text: 'Enter New Name'
+					hint_text: 'Enter Name'
 			BoxLayout:
 				orientation: 'horizontal'
 				Label:
 					text: 'Password'
 				TextInput:
-					id: name
+					id: password
 					hint_text: 'Enter New Password'
 		BoxLayout:
 			orientation: 'horizontal'
 			Button:
 				id: security
-				text: 'Security'
+				text: 'Change Security'
+				on_release: app.root.current = 'changeSecurity'
+			Button:
+				id: change
+				text: 'Change Name/Password'
+				on_release: root.changePass(name.text,password.text)
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				text: 'Home'
+				on_release: app.root.current = 'home'
+			Button:
+				text: 'Exit'
 				on_release: exit()
+#-----------------------------------Change Security---------------------------
+<ChangeSecurity>
+	name: 'changeSecurity'
+	BoxLayout:
+		Label:
+			text: 'Change Security'
 #-----------------------------------Find Tote Screen--------------------------
 <FindTote>
 	on_enter: self.reset()

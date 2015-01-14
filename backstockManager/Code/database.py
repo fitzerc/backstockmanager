@@ -58,18 +58,17 @@ class dbClass():
 	cursor.execute('''CREATE TABLE IF NOT EXISTS passwd\
 			  (\
 			   name STR NOT NULL,\
-			   password STR NOT NULL\
+			   password STR NOT NULL,\
+			   security INT DEFAULT 5\
 			  )''')
 	bsdb.commit()
         cursor = bsdb.cursor()
         sql = "SELECT * FROM passwd WHERE name = 'admin'" 
         cursor.execute(sql)
         test = cursor.fetchone()
-        if test:
-            x = "x"
-        else:
-            sql = "INSERT INTO passwd(name,password)VALUES(?,?)"
-            cursor.execute(sql,('admin','pass1234'))
+        if not test:
+            sql = "INSERT INTO passwd(name,password,security)VALUES(?,?,?)"
+            cursor.execute(sql,('admin','pass1234',5))
             bsdb.commit()
 	bsdb.close()
 

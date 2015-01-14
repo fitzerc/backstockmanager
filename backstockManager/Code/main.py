@@ -78,7 +78,60 @@ class PasswordMaintenance(Screen):
                     bsdb.close()
                     self.reset()
 
+        def delete(self,name,password):
+            bsdb = sqlite3.connect('backstockdb')
+            cursor = bsdb.cursor()
+            if name:
+                sql = "DELETE FROM passwd WHERE name = ?"
+                cursor.execute(sql,name)
+                bsdb.commit()
+                bsdb.close()
+                content = Button(text='Close')
+                popup = Popup(title='User Deleted',content=content,size_hint=(None,None),size=(200, 100))
+                content.bind(on_press=popup.dismiss)
+                popup.open()
+                self.reset()
+            else:
+                    content = Button(text='Close')
+                    popup = Popup(title='Please Enter a Name',content=content,size_hint=(None,None),size=(200, 100))
+                    content.bind(on_press=popup.dismiss)
+                    popup.open()
+                    self.reset()
+
 class EditPassword(Screen):
+        def reset(self):
+                self.ids.name.text = "" 
+                self.ids.name.hint_text = "Enter Name" 
+                self.ids.password.text = "" 
+                self.ids.password.hint_text = "Enter New Password" 
+
+        def help(self):
+            content = Button(text='Close')
+            popup = Popup(title='Security 1: All Access \n Security 5: Limited Access',content=content,size_hint=(None,None),size=(300, 100))
+            content.bind(on_press=popup.dismiss)
+            popup.open()
+
+        def changePass(self,name,password):
+            bsdb = sqlite3.connect('backstockdb')
+            cursor = bsdb.cursor()
+            if not name or not password:
+                content = Button(text='Close')
+                popup = Popup(title='Name and Password \n are required',content=content,size_hint=(None,None),size=(300, 100))
+                content.bind(on_press=popup.dismiss)
+                popup.open()
+                self.reset()
+            else:
+                sql = 'UPDATE passwd SET password=? WHERE name=?'
+                cursor.execute(sql,(password,name))
+                content = Button(text='Close')
+                popup = Popup(title='Password Changed',content=content,size_hint=(None,None),size=(300, 100))
+                content.bind(on_press=popup.dismiss)
+                popup.open()
+                bsdb.commit()
+                bsdb.close()
+                self.reset()
+
+class ChangeSecurity(Screen):    
 #	def security(self):
 #		bsdb = sqlite3.connect('backstockdb')
 #		cursor = bsdb.cursor()
@@ -94,8 +147,8 @@ class EditPassword(Screen):
 #		mainbutton = self.ids.toteColor
 #		mainbutton.bind(on_release=dropdown.open)
 #		dropdown.bind(on_select=lambda instance, x: setattr(mainbutton, 'text', x))
+    pass
 
-    
 class FindTote(Screen):
 	#Reset Find Tote Fields
 	def reset(self):
