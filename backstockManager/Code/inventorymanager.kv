@@ -147,14 +147,23 @@
 					hint_text: 'Enter New Password'
 		BoxLayout:
 			orientation: 'horizontal'
-			Button:
-				id: security
-				text: 'Change Security'
-				on_release: app.root.current = 'changeSecurity'
-			Button:
-				id: change
-				text: 'Change Name/Password'
-				on_release: root.changePass(name.text,password.text)
+			BoxLayout:
+				orientation: 'horizontal'
+				Label:
+					text: 'Security Level: '
+				Button:
+					id: security
+					text: 'Change Security'
+					on_release: root.changeSecurity()
+			BoxLayout:
+				Button:
+					id: change
+					text: 'Save Security'
+					on_release: root.saveSecurity(security.text,name.text)
+				Button:
+					id: change
+					text: 'Change Password'
+					on_release: root.changePass(name.text,password.text)
 		BoxLayout:
 			orientation: 'horizontal'
 			Button:
@@ -167,8 +176,46 @@
 <ChangeSecurity>
 	name: 'changeSecurity'
 	BoxLayout:
+		orientation: 'vertical'
 		Label:
 			text: 'Change Security'
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Full Access'
+			CheckBox:
+				id: women
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Full Access - 1'
+			CheckBox:
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Medium Access'
+			CheckBox:
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Little Access + 1'
+			CheckBox:
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+				text: 'Little Access'
+			CheckBox:
+		BoxLayout:
+			orientation: 'horizontal'
+			Button:
+				text: 'Save Security \n Setting'
+				on_release: exit()
+			Button:
+				text: 'Exit'
+				on_release: exit()
+			Button:
+				text: 'Home'
+				on_release: app.root.current = 'home'
 #-----------------------------------Find Tote Screen--------------------------
 <FindTote>
 	on_enter: self.reset()

@@ -16,6 +16,8 @@ from kivy.uix.label import Label
 search_color = 'test'
 search_label = 'test'
 search_size = 'test'
+name = 'admin'
+password = 'pass'
 
 class InventoryRoot(ScreenManager):
 	pass
@@ -110,6 +112,38 @@ class EditPassword(Screen):
             popup = Popup(title='Security 1: All Access \n Security 5: Limited Access',content=content,size_hint=(None,None),size=(300, 100))
             content.bind(on_press=popup.dismiss)
             popup.open()
+
+        def changeSecurity(self):
+            security = [1, 2, 3, 4, 5]
+            #Create Dropdown
+            dropdown = DropDown()
+            #Fill DropDown
+            for row in range(len(security)):
+                    btn = Button(text= str(security[row]), size_hint_y = None, height=44)
+                    btn.bind(on_release=lambda btn: dropdown.select(btn.text))
+                    dropdown.add_widget(btn)
+            mainbutton = self.ids.security
+            mainbutton.bind(on_release=dropdown.open)
+            dropdown.bind(on_select=lambda instance, x: setattr(mainbutton, 'text', x))
+
+        def saveSecurity(self,level,name):
+            if level and name:
+                bsdb = sqlite3.connect('backstockdb')
+                cursor = bsdb.cursor()
+                sql = 'UPDATE passwd SET security =? WHERE name=?'
+                cursor.execute(sql,(int(level),name))
+                bsdb.commit()
+                bsdb.close()
+                content = Button(text='Close')
+                popup = Popup(title='Security Saved',content=content,size_hint=(None,None),size=(300, 100))
+                content.bind(on_press=popup.dismiss)
+                popup.open()
+                self.reset()
+            else:
+                content = Button(text='Close')
+                popup = Popup(title='Must Enter Name',content=content,size_hint=(None,None),size=(300, 100))
+                content.bind(on_press=popup.dismiss)
+                popup.open()
 
         def changePass(self,name,password):
             bsdb = sqlite3.connect('backstockdb')

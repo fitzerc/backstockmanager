@@ -11,8 +11,8 @@
 ~MSle0~/INS
 
 # Command Line History (newest to oldest):
-:q
 :w
+:q
 :654654
 
 # Search String History (newest to oldest):
@@ -44,7 +44,7 @@
 # Registers:
 "0	LINE	0
 				   password STR NOT NULL\
-""1	LINE	0
+"1	LINE	0
 	        else:
 "2	LINE	0
 	            x = "x"
@@ -63,19 +63,21 @@
 "9	LINE	0
 	                    bsdb = sqlite3.connect('backstockdb')
 	                    cursor = bsdb.cursor()
-"-	CHAR	0
-	L
+""-	CHAR	0
+	'
 
 # File marks:
-'0  71  51  ~\Users\Chris\Documents\GitHub\backstockManager\backstockManager\Code\database.py
-'1  96  0  ~\Users\Chris\Desktop\backstockManager\Code\main.py
-'2  60  1  ~\Users\Chris\Desktop\backstockManager\Code\inventorymanager.kv
-'3  382  22  ~\Users\Chris\Desktop\backstockManager\Code\main.py
-'4  1  0  ~\Users\Chris\Desktop\backstockManager\Code\inventorymanager.kv
+'0  70  59  ~\Users\Chris\Documents\GitHub\backstockManager\backstockManager\Code\database.py
+'1  71  51  ~\Users\Chris\Documents\GitHub\backstockManager\backstockManager\Code\database.py
+'2  96  0  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+'3  60  1  ~\Users\Chris\Desktop\backstockManager\Code\inventorymanager.kv
+'4  382  22  ~\Users\Chris\Desktop\backstockManager\Code\main.py
 '5  1  0  ~\Users\Chris\Desktop\backstockManager\Code\inventorymanager.kv
 '6  1  0  ~\Users\Chris\Desktop\backstockManager\Code\inventorymanager.kv
+'7  1  0  ~\Users\Chris\Desktop\backstockManager\Code\inventorymanager.kv
 
 # Jumplist (newest first):
+-'  70  59  ~\Users\Chris\Documents\GitHub\backstockManager\backstockManager\Code\database.py
 -'  71  51  ~\Users\Chris\Documents\GitHub\backstockManager\backstockManager\Code\database.py
 -'  1  0  ~\Users\Chris\Documents\GitHub\backstockManager\backstockManager\Code\database.py
 -'  96  0  ~\Users\Chris\Desktop\backstockManager\Code\main.py
@@ -144,17 +146,47 @@
 -'  124  6  ~\Users\Chris\Desktop\backstockManager\Code\main.py
 -'  60  13  ~\Users\Chris\Desktop\backstockManager\Code\main.py
 -'  54  25  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  96  0  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  81  3  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  98  8  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  79  27  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  69  20  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  71  0  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  249  20  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  99  0  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  411  0  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  382  5  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  236  5  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  228  12  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  210  12  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  185  12  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  170  12  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  143  12  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  126  12  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  423  46  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  58  30  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  34  19  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  32  16  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  588  2  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  572  13  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  552  13  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  59  12  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  123  13  ~\Users\Chris\Desktop\backstockManager\Code\main.py
+-'  140  13  ~\Users\Chris\Desktop\backstockManager\Code\main.py
 
 # History of marks within files (newest to oldest):
 
 > ~\Users\Chris\Documents\GitHub\backstockManager\backstockManager\Code\database.py
-	"	71	51
-	^	71	52
-	.	71	51
+	"	70	59
+	^	70	60
+	.	70	59
 	+	62	27
 	+	69	14
 	+	70	63
-	+	71	51
+	+	71	53
+	+	61	27
+	+	71	52
+	+	70	59
 
 > ~\Users\Chris\Desktop\backstockManager\Code\main.py
 	"	96	0
